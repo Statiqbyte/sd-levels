@@ -20,8 +20,10 @@ local ToggleLevelsUI = function(show)
     if show then
         TriggerServerEvent('sd-levels:server:syncData')
         SetNuiFocus(true, true)
+        SetNuiFocusKeepInput(false)
     else
         SetNuiFocus(false, false)
+        SetNuiFocusKeepInput(false)
     end
     SendNUIMessage({
         action = "toggleUI",
@@ -41,6 +43,7 @@ end
 RegisterNUICallback('closeUI', function(data, cb)
     levelsVisible = false
     SetNuiFocus(false, false)
+    SetNuiFocusKeepInput(false)
     SendNUIMessage({
         action = "toggleUI",
         show = false

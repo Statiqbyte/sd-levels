@@ -93,4 +93,16 @@ return { -- table of skills
             100, 160, 220, 290, 360, 440, 520, 610, 700, 800,
         },
     },
+    ["DRUG_SALES"] = {
+        description = "Move narcotics and manage street deals",
+        xpPerLevel = {
+            120, 180, 240, 310, 380, 450, 520, 600, 680, 770,
+        },
+    },
+    ["CAR_THEFT"] = {
+        description = "Steal and strip vehicles without being caught",
+        xpPerLevel = {
+            130, 190, 260, 330, 400, 480, 560, 640, 730, 820,
+        },
+    },
 }
