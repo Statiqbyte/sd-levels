@@ -1,3 +1,7 @@
+const RESOURCE_NAME = typeof GetParentResourceName === 'function'
+    ? GetParentResourceName()
+    : 'wc-levels'; // fallback for non-NUI contexts
+
 let levelsData = [];
 
 function updateLevels(levels) {
@@ -56,7 +60,7 @@ function toggleUI(show) {
 
 function closeUI() {
     toggleUI(false);
-    fetch('https://sd-levels/closeUI', {method: 'POST'});
+    fetch(`https://${RESOURCE_NAME}/closeUI`, { method: 'POST' });
 }
 
 // Event Listeners
